@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'carts.apps.CartsConfig',
     'store.apps.StoreConfig',
     'category.apps.CategoryConfig',
     'accounts.apps.AccountsConfig',
@@ -66,6 +67,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'category.context_processors.menu_link', # we can call this menu_links in all the templates
+                'carts.context_processors.counter',
+
             ],
         },
     },
