@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import django
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -131,4 +132,19 @@ MEDIA_ROOT = BASE_DIR/'media'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#configuring the email host(SMTP CONFIGURATION)
+#EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST ='smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = '2002selvakumar@gmail.com'
+EMAIL_HOST_PASSWORD = 'icnsvzmadwabkexc'
+EMAIL_USE_TLS = True
+
+
